@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="HuFwdvUe2FpI_Mq7pWphiGL0F1-Rihu-osZQYdXMnik" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Saleem | Digital Marketing Strategist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #14a800; /* Upwork green */
+            --secondary: #001e00; /* Upwork dark green */
+            --accent: #ffffff; /* White */
+            --light: #f7f7f7;
+            --dark: #222222;
+            --gray: #5e6d55; /* Upwork gray-green */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #f0f7ed 0%, #e0efe0 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .service-card ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+        
+        .service-card ul li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .upwork-badge {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .upwork-badge i {
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .badge-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .badge-text p {
+            color: var(--gray);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: var(--light);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            color: var(--secondary);
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f7ed;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: #f0f7ed;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta .btn {
+            background-color: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        
+        .cta .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .social-links li {
+            margin: 0 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cta p {
+                font-size: 1rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+            }
+            
+            .footer-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Abdullah <span>Saleem</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Results</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Digital Marketing <span>Strategist</span></h1>
+            <p>Since 2020, I've been helping businesses maximize their potential through strategic digital marketing that delivers measurable results.</p>
+            <a href="https://www.upwork.com/freelancers/~01ab1656443430e479" class="btn">Hire Me on Upwork</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About Me</h3>
+                    <p>I'm Abdullah Saleem, a passionate Digital Marketing Strategist immersed in the realm of online promotion since 2020. My mission is to maximize business potential through data-driven marketing strategies.</p>
+                    <p>With a proven track record, I've collaborated with numerous global enterprises, propelling them to remarkable revenue heights through unparalleled digital strategies. My expertise in securing top Google rankings has consistently driven substantial business growth for my clients.</p>
+                    <p>I'm dedicated to crafting tailored approaches that elevate brands and deliver outstanding results in the ever-evolving digital landscape. Whether you need comprehensive digital strategy, targeted campaigns, or measurable growth, I have the expertise to make it happen.</p>
+                    <a href="#services" class="btn btn-outline">Explore My Services</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://scontent.flhe17-1.fna.fbcdn.net/v/t39.30808-6/486730312_1179323896934819_8775402910295920774_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Pr5SLWYAK6IQ7kNvgEq0Fvt&_nc_zt=23&_nc_ht=scontent.flhe17-1.fna&_nc_gid=e_yTq9HUlzS5f1M_boMQGA&oh=00_AYETLlIHHARJdXpFNS27Za0VlYwuLhFmXtNIOYxQBnU5rw&oe=67ED3AFB" alt="Abdullah Saleem - Digital Marketing Strategist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Digital Marketing Services</h2>
+                <p>Comprehensive solutions tailored to drive your business growth</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Strategy Development</h3>
+                    <ul>
+                        <li>Comprehensive market analysis</li>
+                        <li>Competitor benchmarking</li>
+                        <li>Custom growth roadmap</li>
+                        <li>Performance tracking systems</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Search Engine Optimization</h3>
+                    <ul>
+                        <li>Keyword research & strategy</li>
+                        <li>On-page & technical SEO</li>
+                        <li>Content optimization</li>
+                        <li>Ranking monitoring</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Paid Advertising</h3>
+                    <ul>
+                        <li>Google Ads management</li>
+                        <li>Social media advertising</li>
+                        <li>Retargeting campaigns</li>
+                        <li>Conversion optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social Media Marketing</h3>
+                    <ul>
+                        <li>Platform-specific strategies</li>
+                        <li>Content calendar development</li>
+                        <li>Community growth</li>
+                        <li>Influencer partnerships</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>The results speak for themselves</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Abdullah transformed our online presence completely. Within 6 months, our organic traffic increased by 350% and leads grew by 200%. His strategic approach to digital marketing is unmatched."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>E-commerce Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The digital strategy Abdullah developed for our SaaS company helped us scale from $10k to $50k MRR in just 9 months. His expertise in conversion optimization was game-changing."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <p>Tech Startup CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"After struggling with digital marketing for years, Abdullah's data-driven approach finally got us consistent results. Our customer acquisition costs dropped by 60% while increasing quality leads."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upwork-badge">
+                <i class="fab fa-upwork"></i>
+                <div class="badge-text">
+                    <h3>Top Rated on Upwork</h3>
+                    <p>Consistent 5-star reviews with 40+ successful projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Answers to common digital marketing questions</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How is digital marketing different from traditional marketing?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Digital marketing focuses exclusively on online channels (websites, social media, search engines, email) and offers precise targeting, real-time analytics, and measurable ROI. Unlike traditional marketing, it allows for continuous optimization based on performance data.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does it take to see results from digital marketing?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Paid campaigns can show immediate results, while SEO typically takes 3-6 months to gain traction. A comprehensive strategy usually shows measurable impact within the first 30-60 days, with compounding results over time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What metrics do you track to measure success?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I focus on business-impacting metrics: conversion rates, customer acquisition cost, lifetime value, ROI, and revenue attribution. We also track channel-specific KPIs like organic traffic, click-through rates, and engagement metrics.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with businesses in any industry?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While I have experience across multiple industries, I specialize in e-commerce, SaaS, professional services, and technology companies. During our discovery call, I'll assess if my expertise aligns with your specific needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What makes your approach different?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I combine data analytics with creative strategy, focusing on sustainable growth rather than quick wins. My methodology integrates all digital channels into a cohesive system that drives compounding results over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Digital Presence?</h2>
+            <p>Let's work together to develop a winning digital marketing strategy that drives real business growth.</p>
+            <a href="https://www.upwork.com/freelancers/~01ab1656443430e479" class="btn">Hire Me on Upwork</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="logo">Abdullah <span>Saleem</span></div>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Results</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <ul class="social-links">
+                <li><a href="https://github.com/abdullahsaleemseo"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.pinterest.com/seoabdullahsaleem/"><i class="fab fa-pinterest"></i></a></li>
+                <li><a href="https://gitlab.com/seo.abdullahsaleem"><i class="fab fa-gitlab"></i></a></li>
+                <li><a href="https://www.facebook.com/people/Abdullah-Saleem/100045716588911/"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/its_abdullah_saleem_official"><i class="fab fa-instagram"></i></a></li>  
+                <li><a href="https://twitter.com/shiekhmabdullah"><i class="fab fa-x"></i></a></li>
+                <li><a href="https://g.co/kgs/Zdjs8sX"><i class="fab fa-google"></i></a></li>                     
+            </ul>
+            <p class="copyright">© 2025 Abdullah Saleem - Digital Marketing Strategist. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
